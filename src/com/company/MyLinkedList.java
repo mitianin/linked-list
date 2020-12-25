@@ -83,7 +83,7 @@ public class MyLinkedList<T> implements Iterable<T> {
     }
 
 
-    void toArray() {
+    public T[] toArray() {
         array = (T[]) new Object[size];
         Node temp = head;
 
@@ -91,12 +91,12 @@ public class MyLinkedList<T> implements Iterable<T> {
             array[i] = temp.value;
             temp = temp.next;
         }
+        return array;
     }
 
     @Override
     public String toString() {
-        toArray();
-        return Arrays.toString(array);
+        return Arrays.toString(toArray());
     }
 
     public Iterator<T> iteratorReverse() {
